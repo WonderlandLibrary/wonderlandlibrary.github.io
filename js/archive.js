@@ -15,13 +15,13 @@ window.addEventListener('load', async () => {
   if (gridMain == null)
     return;
 
-  const cbButton = createButton("Client Binaries", "Loading...", "browse.html?type=cb", "icons/minecraft.webp");
-  const pbButton = createButton("Server tool Binaries", "Loading...", "browse.html?type=pb", "icons/minecraft.webp");
-  const utButton = createButton("User Tools", "Loading...", "browse.html?type=ut", "icons/minecraft.webp");
+  const cbButton = createButton("Client Binaries", "Loading...", "browse.html?type=cb", "binaries", "icons/minecraft.webp");
+  const pbButton = createButton("Server tool Binaries", "Loading...", "browse.html?type=pb", "binaries", "icons/minecraft.webp");
+  const utButton = createButton("User Tools", "Loading...", "browse.html?type=ut", "binaries", "icons/minecraft.webp");
 
-  const csButton = createButton("Client Sources", "Loading...", "browse.html?type=cs", "icons/code.webp");
-  const psButton = createButton("Server tool Sources", "Loading...", "browse.html?type=ps", "icons/code.webp");
-  const dtButton = createButton("Development Tools", "Loading...", "browse.html?type=dt", "icons/code.webp");
+  const csButton = createButton("Client Sources", "Loading...", "browse.html?type=cs", "sources", "icons/code.webp");
+  const psButton = createButton("Server tool Sources", "Loading...", "browse.html?type=ps", "sources", "icons/code.webp");
+  const dtButton = createButton("Development Tools", "Loading...", "browse.html?type=dt", "sources", "icons/code.webp");
 
   gridMain.appendChild(cbButton);
   gridMain.appendChild(pbButton);
@@ -32,8 +32,8 @@ window.addEventListener('load', async () => {
 
   const gridSecondary = document.getElementById("button-grid-secondary");
 
-  const codeSnippetsButton = createButton("Code snippets", "Coming soon!", "#", "icons/code.webp");
-  const mediaButton = createButton("Media", "Coming soon!", "#", "icons/media.webp");
+  const codeSnippetsButton = createButton("Code snippets", "Coming soon!", "#", "sources", "icons/code.webp");
+  const mediaButton = createButton("Media", "Coming soon!", "#", "media", "icons/media.webp");
 
   gridSecondary.appendChild(codeSnippetsButton);
   gridSecondary.appendChild(mediaButton);
@@ -41,9 +41,9 @@ window.addEventListener('load', async () => {
   // Scripts
   const gridScripts = document.getElementById("button-grid-scripts");
 
-  const liquidBounceButton = createButton("LiquidBounce", "Loading...", "browse.html?type=s_lb", null, "icons/liquidbounce.png");
-  const astolfoButton = createButton("Astolfo", "Loading...", "browse.html?type=s_ao", null, "icons/astolfo.png");
-  const ravenButton = createButton("Raven", "Loading...", "browse.html?type=s_rn", null, "icons/raven.png");
+  const liquidBounceButton = createButton("LiquidBounce", "Loading...", "browse.html?type=s_lb", "liquidbounce", null, "icons/liquidbounce.png");
+  const astolfoButton = createButton("Astolfo", "Loading...", "browse.html?type=s_ao", "astolfo", null, "icons/astolfo.png");
+  const ravenButton = createButton("Raven", "Loading...", "browse.html?type=s_rn", "raven", null, "icons/raven.png");
 
   gridScripts.appendChild(liquidBounceButton);
   gridScripts.appendChild(astolfoButton);
@@ -62,7 +62,7 @@ window.addEventListener('load', async () => {
   modifyDescription(ravenButton, `${await getEntries("https://wonderland.sigmaclient.cloud/getlist.php?type=s_rn")} entries and counting!`);
 });
 
-function createButton(name, description, link, imgSrc = null, iconSrc = null) {
+function createButton(name, description, link, style, imgSrc = null, iconSrc = null) {
   const wrapper = document.createElement("a");
   wrapper.href = link;
 
@@ -85,7 +85,7 @@ function createButton(name, description, link, imgSrc = null, iconSrc = null) {
   element.appendChild(buttonText);
 
   const background = document.createElement("div");
-  background.className = "button-background";
+  background.classList.add("button-background", style);
   element.appendChild(background);
 
   if (imgSrc) {
