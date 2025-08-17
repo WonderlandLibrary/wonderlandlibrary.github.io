@@ -84,6 +84,10 @@ function createButton(name, description, link, imgSrc = null, iconSrc = null) {
 
   element.appendChild(buttonText);
 
+  const background = document.createElement("div");
+  background.className = "button-background";
+  element.appendChild(background);
+
   if (imgSrc) {
     const image = document.createElement("img");
     image.src = imgSrc;
