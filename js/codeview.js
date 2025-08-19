@@ -130,7 +130,7 @@ function update() {
         expandedPaths = new Set(lastExpandedPaths);
     }
 
-    container.appendChild(renderTree(fileTree, '', 0, expandedPaths));
+    container.appendChild(renderTree(fileTree, '', 0, expandedPaths, searchValue));
 }
 
 function buildTree(paths) {
@@ -169,7 +169,7 @@ function collapseTree(node) {
     return result;
 }
 
-function renderTree(node, currentPath, depth, expandedPaths = new Set()) {
+function renderTree(node, currentPath, depth, expandedPaths = new Set(), searchTerm = undefined) {
     const ul = document.createElement('ul');
 
     const entries = Object.entries(node).sort(([aName, aVal], [bName, bVal]) => {
@@ -201,7 +201,7 @@ function renderTree(node, currentPath, depth, expandedPaths = new Set()) {
 
             dir.append(indicator, dirName);
 
-            const nested = renderTree(child, `${currentPath}${name}/`, depth + 1, expandedPaths);
+            const nested = renderTree(child, `${currentPath}${name}/`, depth + 1, expandedPaths, searchTerm);
             nested.classList.add('nested');
 
             if (expandedPaths.has(`${currentPath}${name}/`)) {
@@ -216,6 +216,9 @@ function renderTree(node, currentPath, depth, expandedPaths = new Set()) {
 
             li.append(dir, nested);
         } else {
+            if (searchTerm && !name.toLowerCase().includes(searchTerm.toLowerCase()))
+                continue;
+
             const fileEl = document.createElement('span');
             fileEl.textContent = name;
             fileEl.classList.add('file');
