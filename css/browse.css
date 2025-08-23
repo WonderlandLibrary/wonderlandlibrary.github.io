@@ -99,7 +99,7 @@ body {
 }
 
 .grid-entry-wrapper:hover > .grid-entry {
-    background-color: #2A2A2AFF;
+    background: rgba(40, 40, 40, 0.36);
 }
 
 .grid-entry > span {
@@ -142,36 +142,11 @@ body {
     width: 100%;
     text-align: center;
     color: #e0e0e0;
-    z-index: 1;
-
-    transition: border-color 0.2s ease, color 0.4s ease;
 }
 
-.grid-sub-button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: 200% 200%;
-    background: linear-gradient(
-            45deg,
-            rgba(33, 147, 176, 0.36),
-            rgba(186, 109, 237, 0.36)
-    ) left center;
-    opacity: 0;
-    transition: opacity 0.2s ease, background-position 1s ease;
-    z-index: -1;
-}
 .grid-sub-button:hover {
-    border: 1px solid rgb(91, 91, 91);
+    background: rgba(52, 52, 52, 0.36);
     color: #ffffff;
-}
-
-.grid-sub-button:hover::before {
-    opacity: 1;
-    background-position: right center;
 }
 
 .button-grid::-webkit-scrollbar {
