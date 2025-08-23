@@ -2,7 +2,7 @@ window.addEventListener("load", async () => {
     const container = document.getElementById("index-wrapper");
 
     const contentBox = document.createElement("div");
-    contentBox.classList.add("index");
+    contentBox.classList.add("window");
 
     const title = document.createElement("h2");
     title.innerText = "Wonderland Central";
