@@ -23,9 +23,24 @@ window.addEventListener("load", async function() {
                 })
             }
 
-            await displayClient(0)
+            if (window.location.href.endsWith("marketplace.html"))
+                await displayClient(0)
+
+            for (let client of clients) {
+                addToNavBar(client.clientName, client.price === -1 ? `javascript:alert("Coming soon!")` : client.link)
+            }
         })
 });
+
+function addToNavBar(name, link) {
+    const dropdown = document.getElementById("client-dropdown");
+    const wrapper = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = link;
+    a.innerText = name;
+    wrapper.appendChild(a);
+    dropdown.appendChild(wrapper);
+}
 
 async function left() {
     let nextIndex = currentIndex - 1;
