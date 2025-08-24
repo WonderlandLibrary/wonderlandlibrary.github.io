@@ -9,13 +9,14 @@
     <meta content="https://wonderlandlibrary.github.io" property="og:url" />
     <meta content="https://wonderlandlibrary.github.io/icons/wonderland_big.png" property="og:image" />
     <link rel="icon" href="https://wonderlandlibrary.github.io/icons/wonderland_tiiiiny.ico" type="image/x-icon">
+    <meta content="#43B581" data-react-helmet="true" name="theme-color" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
           rel=" stylesheet">
+    <link rel="stylesheet" href="css/marketplace.css"/>
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/background.css"/>
-    <link rel="stylesheet" href="css/browse.css"/>
 </head>
 <body>
 
@@ -33,6 +34,7 @@
         <div class="particle particle-4"></div>
     </div>
 </div>
+
 <header>
     <div class="left-section">
         <a class="site-name" href="/">Wonderland Central</a>
@@ -47,35 +49,16 @@
             </div>
         </nav>
     </div>
-    <a href="https://discord.gg/BZhQFWYbhR" class="top-nav">
+    <a href="https://discord.gg/BZhQFWYbhR">
         <img src="icons/discord.webp" alt="Logo" class="logo"/>
     </a>
 </header>
-<main class="window-wrapper">
-    <div class="window">
-        <div class="grid-header">
-            <h2 class="grid-title" id="header">Loading</h2>
 
-            <div class="grid-sub">
-                <h2>We share content as it is originally/when we get it (cracks, etc.), and therefore it may contain undesirable telemetry or even malware.</h2>
-                <h2>Always run software you aren't 100% sure is safe in a VM!</h2>
-            </div>
+<div class="window-wrapper"> </div>
 
-            <div class="container-navigation">
-                <label>
-                    <input id="search-bar" type="text" placeholder="Search..." />
-                </label>
-                <button id="sort-toggle" style="margin-left: 10px;">Sort: A → Z</button>
-            </div>
-        </div>
-
-        <div class="button-grid" id="entry-grid">
-            <!--filled from browse.js-->
-        </div>
-    </div>
-</main>
-
-<script src="js/archive.js"></script>
-<script src="js/marketplace.js"></script>
-<script src="js/browse.js"></script>
 </body>
+<script src="js/marketplace.js"></script>
+<script src="js/archive.js"></script>
+<script src="js/price-conversions.js"></script>
+<script src="js/marketplace.js"></script>
+</html>

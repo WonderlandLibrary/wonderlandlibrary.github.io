@@ -1,0 +1,106 @@
+.window-wrapper {
+    height: 100vh;
+}
+
+.window {
+    display: flex;
+    flex-direction: column;
+    width: 590px;
+}
+
+.client-preview {
+    border: transparent;
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 120 / 59; /* Why the fuck are our previews in this format?? */
+}
+
+.client-preview.top {
+    border-radius: 20px 20px 0 0;
+}
+
+.client-preview.bottom {
+    border-radius: 0 0 20px 20px;
+}
+
+.client {
+    display: flex;
+    flex-direction: row;
+}
+
+.client-element {
+    background: rgba(31, 31, 31, 0.36);
+    transition: background-color 0.2s ease;
+    position: relative;
+}
+
+.client-element.hover {
+    cursor: pointer;
+}
+
+.client-element.hover:hover {
+    background: rgba(40, 40, 40, 0.36);
+}
+
+.client-element-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.client-text {
+    flex-grow: 1;
+
+    height: 140px;
+    align-content: center;
+}
+
+.client-name {
+    font-size: 25px;
+    margin: 0;
+}
+
+.client-description {
+    margin: 0 5px;
+    word-wrap: break-word;
+}
+
+.client-price {
+    margin: 0 0 2px;
+    font-weight: bold;
+    word-wrap: break-word;
+}
+
+.client-control {
+    flex-shrink: 1;
+    align-self: stretch;
+    align-content: center;
+}
+
+.client-control.left {
+    border-right: 1px solid rgb(47, 47, 47);
+}
+
+.client-control.right {
+    border-left: 1px solid rgb(47, 47, 47);
+}
+
+.arrow {
+    width: 22px;
+    height: 22px;
+    background: rgba(100%, 100%, 100%, 0.9);
+
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.arrow.left {
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
+}
+
+.arrow.right {
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+}

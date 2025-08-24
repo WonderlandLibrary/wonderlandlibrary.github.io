@@ -165,3 +165,22 @@ nav a:hover {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     margin-left: 10px;
 }
+
+.window-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 84px);
+    z-index: 2;
+}
+
+.window {
+    align-content: center;
+    text-align: center;
+
+    backdrop-filter: blur(6px);
+    border-radius: 20px;
+    border: 1px solid #444;
+    background: rgba(31, 31, 31, 0.36);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
