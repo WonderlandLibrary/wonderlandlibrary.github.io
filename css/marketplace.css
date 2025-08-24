@@ -5,14 +5,14 @@
 .window {
     display: flex;
     flex-direction: column;
-    width: 500px;
+    width: 590px;
 }
 
 .client-preview {
     border: transparent;
     object-fit: cover;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 120 / 59; /* Why the fuck are our previews in this format?? */
 }
 
 .client-preview.top {
@@ -31,16 +31,30 @@
 .client-element {
     background: rgba(31, 31, 31, 0.36);
     transition: background-color 0.2s ease;
+    position: relative;
 }
 
-.client-element:hover {
+.client-element.hover {
+    cursor: pointer;
+}
+
+.client-element.hover:hover {
     background: rgba(40, 40, 40, 0.36);
+}
+
+.client-element-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
 }
 
 .client-text {
     flex-grow: 1;
 
-    height: 130px;
+    height: 140px;
     align-content: center;
 }
 
@@ -50,7 +64,13 @@
 }
 
 .client-description {
-    margin: 0;
+    margin: 0 5px;
+    word-wrap: break-word;
+}
+
+.client-price {
+    margin: 0 0 2px;
+    font-weight: bold;
     word-wrap: break-word;
 }
 
