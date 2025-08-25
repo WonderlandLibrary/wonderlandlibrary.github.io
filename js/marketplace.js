@@ -16,7 +16,7 @@ window.addEventListener("load", async function() {
                 clients.push({
                     clientName: client.name,
                     clientDescription: client.description,
-                    link: client.link === "discord" ? "https://discord.gg/BZhQFWYbhR" : client.link,
+                    link: client.link === "discord" ? "discord.html" : client.link,
                     previewImage1: client.images[0],
                     previewImage2: client.images[1],
                     price: client.price

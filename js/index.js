@@ -14,7 +14,7 @@ window.addEventListener("load", async () => {
 
     buttons.appendChild(createButton("Marketplace", "Browse our cutting-edge partnered clients", "marketplace.html", "marketplace"))
     buttons.appendChild(createButton("Archive", "Browse our endless archive of clients, plugins, tools and more", "archive.html", "archive"))
-    buttons.appendChild(createButton("Discord", "Join our discord to converse with highly intelligent individuals", "https://discord.gg/BZhQFWYbhR", "discord"))
+    buttons.appendChild(createButton("Discord", "Join our discord to converse with highly intelligent individuals", "discord.html", "discord"))
 
     contentBox.appendChild(buttons)
 
