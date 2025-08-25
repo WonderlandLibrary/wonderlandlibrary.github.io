@@ -56,6 +56,12 @@ nav a:hover {
     height: 42px;
     object-fit: cover;
     border-radius: 4px;
+    filter: opacity(80%);
+    transition: filter 0.3s ease;
+}
+
+.logo:hover {
+    filter: opacity(100%);
 }
 
 .left-section {
