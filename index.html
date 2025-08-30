@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=https://newdomain.com">
+  <title>Redirecting...</title>
+  <script>
+    (function() {
+      const query = window.location.search;
+      const hash = window.location.hash;
+      const destination = "https://wonderlandcentral.github.io";
+      const target = destination + query + hash;
+      window.location.replace(target);
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting to <a id="link" href="https://newdomain.com">new site</a>...</p>
+</body>
+</html>
